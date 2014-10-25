@@ -1,0 +1,14 @@
+<div class="popover">
+    <div class="arrow"></div>
+        <h3 class="popover-title" ng-bind="title" ng-show="title"></h3>
+        <div class="popover-content" class="well">
+            <p data-ng-repeat="file in fileArchive" >
+                <a target="_self" ng-href="api/thing/download/{{file.id}}" class="label label-info">
+                    <i class="fa fa-download"></i> {{file.created | date: 'yyyy-MM-dd'}} v {{file.version}}
+                </a>
+            </p>
+            <div class="form-actions">
+                <button type="button" class="btn btn-default btn-sm" ng-click="$hide()">Close</button>
+            </div>
+    </div>
+</div>

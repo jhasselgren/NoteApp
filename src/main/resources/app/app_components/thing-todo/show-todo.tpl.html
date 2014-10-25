@@ -1,0 +1,12 @@
+<a ng-href="/#/todo/view/{{thing.id}}"><h3>{{thing.name}} <small>- {{thing.created | date: 'yyyy-MM-dd'}}</small></h3></a>
+<div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="{{thing.status}}" aria-valuemin="0" aria-valuemax="100" ng-style="progressStyle()">
+        <span class="sr-only">{{thing.status}}% Complete</span>
+    </div>
+</div>
+<p ng-bind-html="thing.description | jhHtml"></p>
+<p>
+    <a href data-template="{{editAside.url}}" data-backdrop="static" data-placement="left" data-animation="am-slide-left" bs-aside="editAside.data" data-container="body" class="label label-info" ><i class="fa fa-pencil"></i> Edit</a>
+    <a href class="label label-info"  data-placement="top-left" bs-popover="deletePopover.data" data-template="{{deletePopover.url}}"><i class="fa fa-trash"></i> Delete</a>
+    <span class="label label-info"><i class="fa fa-ellipsis-h"></i></span>
+</p>
